@@ -93,7 +93,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 18px; /* Ορίζουμε το μέγεθος της γραμματοσειράς στα 18px */
+    font-size: 18px;
 }
 
 /* Στυλ για το κουμπί εγγραφής */
@@ -158,4 +158,44 @@ body {
 .input-group-half .input-group {
     flex: 1;
     margin-bottom: 0;
+}
+
+---
+
+/* Media Queries για κινητά τηλέφωνα */
+@media (max-width: 600px) {
+    .main-header {
+        flex-direction: column; /* Κάνουμε το header κάθετο */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .main-header .logo {
+        margin-bottom: 10px; /* Προσθήκη κενού κάτω από το λογότυπο */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Κάνουμε το μενού κάθετο */
+        gap: 10px; /* Μικρότερο κενό μεταξύ των συνδέσμων */
+    }
+
+    .register-container {
+        padding: 20px; /* Μικρότερο padding στις μικρές οθόνες */
+        box-shadow: none; /* Αφαίρεση του σκιασμού για πιο καθαρή εμφάνιση */
+    }
+
+    .input-group-triple,
+    .input-group-half {
+        flex-direction: column; /* Κάνουμε τα πεδία των φορμών το ένα κάτω από το άλλο */
+        gap: 0;
+    }
+
+    /* Ρυθμίσεις για τα πεδία μέσα στις ομάδες */
+    .input-group.address-group,
+    .input-group.number-group,
+    .input-group.zip-group,
+    .input-group-half .input-group {
+        flex: auto; /* Επαναφορά του πλάτους στο κανονικό */
+        margin-bottom: 15px;
+    }
 }
