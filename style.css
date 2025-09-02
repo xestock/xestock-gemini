@@ -1,7 +1,7 @@
 /* Βασικές ρυθμίσεις για όλη τη σελίδα */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fdf0d5; /* Νέο χρώμα για το background */
+    background-color: #fdf0d5;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -9,7 +9,7 @@ body {
 
 /* Στυλ για την κεφαλίδα (header) */
 .main-header {
-    background-color: #003049; /* Νέο χρώμα για την κεφαλίδα */
+    background-color: #003049;
     color: #fff;
     padding: 15px 20px;
     display: flex;
@@ -41,7 +41,7 @@ body {
 }
 
 .main-nav a:hover {
-    color: #fdf0d5; /* Αλλαγή χρώματος για το hover */
+    color: #fdf0d5;
 }
 
 /* Στυλ για το κυρίως περιεχόμενο (main) */
@@ -57,7 +57,7 @@ body {
 .main-footer {
     text-align: center;
     padding: 20px;
-    background-color: #003049; /* Νέο χρώμα για το footer */
+    background-color: #003049;
     color: #fff;
 }
 
@@ -97,7 +97,7 @@ body {
 .register-button {
     width: 100%;
     padding: 12px;
-    background-color: #fb8500; /* Νέο χρώμα για τα κουμπιά */
+    background-color: #fb8500;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -107,7 +107,7 @@ body {
 }
 
 .register-button:hover {
-    background-color: #d17000; /* Σκούρο χρώμα για το hover */
+    background-color: #d17000;
 }
 
 /* Στυλ για τον σύνδεσμο σύνδεσης */
@@ -117,7 +117,7 @@ body {
 }
 
 .login-link a {
-    color: #003049; /* Χρώμα για τον σύνδεσμο */
+    color: #003049;
     text-decoration: none;
 }
 
@@ -125,15 +125,34 @@ body {
     text-decoration: underline;
 }
 
-/* Στυλ για να είναι τα πεδία δίπλα-δίπλα */
-.input-group-inline {
+/* Νέο στυλ για την ομαδοποίηση διεύθυνσης, αριθμού και ΤΚ */
+.input-group-triple {
     display: flex;
-    justify-content: space-between;
-    gap: 15px; /* Απόσταση μεταξύ των πεδίων */
-    margin-bottom: 15px; /* Απόσταση από το επόμενο πεδίο */
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-end;
 }
 
-.input-group-inline .input-group {
-    flex: 1; /* Κάνε κάθε πεδίο να καταλαμβάνει ίσο χώρο */
-    margin-bottom: 0;
+.input-group.address-group {
+    flex: 3;
+}
+
+.input-group.number-group {
+    flex: 1;
+}
+
+.input-group.zip-group {
+    flex: 1;
+}
+
+/* Νέο στυλ για τα πεδία email/τηλεφώνου και κωδικών */
+.input-group-half {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-group-half .input-group {
+    flex: 1; /* Αυτό κάνει τα πεδία να έχουν ίσο πλάτος (50/50) */
+    margin-bottom: 0; /* Αφαιρεί το επιπλέον κενό μεταξύ τους */
 }
