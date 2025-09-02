@@ -164,6 +164,8 @@ body {
     margin-bottom: 0;
 }
 
+---
+
 /* Media Queries για κινητά τηλέφωνα */
 @media (max-width: 600px) {
     body {
@@ -171,12 +173,12 @@ body {
     }
 
     .main-header {
-        flex-direction: column !important; /* Κάνουμε το header κάθετο */
+        flex-direction: column !important;
         padding: 10px !important;
     }
 
     .main-nav ul {
-        flex-direction: column !important; /* Κάνουμε το μενού κάθετο */
+        flex-direction: column !important;
         gap: 8px !important;
         width: 100% !important;
     }
@@ -195,6 +197,7 @@ body {
     .input-group-half {
         flex-direction: column !important;
         gap: 0 !important;
+        align-items: stretch !important; /* Εδώ είναι η διόρθωση */
     }
 
     .input-group.address-group,
