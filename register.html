@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xestock - Εγγραφή</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Εγγραφή στο Xestock</h2>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="afm">ΑΦΜ:</label>
+                <input type="text" id="afm" name="afm" required>
+            </div>
+            <div class="input-group">
+                <label for="businessName">Επωνυμία Επιχείρησης:</label>
+                <input type="text" id="businessName" name="businessName" required>
+            </div>
+            <div class="input-group">
+                <label for="category">Κατηγορία:</label>
+                <select id="category" name="category" required>
+                    <option value="">Επιλέξτε κατηγορία</option>
+                    <option value="bookstore">Βιβλιοπωλείο</option>
+                    <option value="pharmacy">Φαρμακείο</option>
+                    <option value="autoparts">Ανταλλακτικά Αυτοκινήτων</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="address">Διεύθυνση:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="input-group">
+                <label for="phone">Τηλέφωνο:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="input-group">
+                <label for="alphanumeric">Αλφαριθμητικό:</label>
+                <input type="text" id="alphanumeric" name="alphanumeric">
+            </div>
+            <div class="input-group">
+                <label for="zipCode">ΤΚ:</label>
+                <input type="text" id="zipCode" name="zipCode" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Κωδικός Πρόσβασης:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Επιβεβαίωση Κωδικού:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="register-button">Εγγραφή</button>
+        </form>
+        <div class="login-link">
+            Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ</a>.
+        </div>
+    </div>
+</body>
+</html>
