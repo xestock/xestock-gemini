@@ -124,3 +124,16 @@ body {
 .login-link a:hover {
     text-decoration: underline;
 }
+
+/* Στυλ για να είναι τα πεδία δίπλα-δίπλα */
+.input-group-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Απόσταση μεταξύ των πεδίων */
+    margin-bottom: 15px; /* Απόσταση από το επόμενο πεδίο */
+}
+
+.input-group-inline .input-group {
+    flex: 1; /* Κάνε κάθε πεδίο να καταλαμβάνει ίσο χώρο */
+    margin-bottom: 0;
+}
