@@ -1,11 +1,15 @@
 /* Βασικές ρυθμίσεις για όλη τη σελίδα */
+* {
+    box-sizing: border-box; /* Η τελική λύση για το κούνημα της σελίδας */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fdf0d5;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden; /* Απαγορεύει την οριζόντια κύλιση */
+    overflow-x: hidden;
 }
 
 /* Στυλ για την κεφαλίδα (header) */
@@ -165,34 +169,33 @@ body {
 /* Media Queries για κινητά τηλέφωνα */
 @media (max-width: 600px) {
     body {
-        padding: 0 10px; /* Προσθήκη μικρού κενού στα πλάγια */
+        padding: 0 10px;
     }
 
     .main-header {
-        flex-direction: column; /* Κάνουμε το header κάθετο */
+        flex-direction: column;
         padding: 10px;
     }
 
     .main-nav ul {
-        flex-direction: column; /* Κάνουμε το μενού κάθετο */
-        gap: 8px; /* Μικρότερο κενό */
-        width: 100%; /* Γεμίζει το πλάτος */
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
     }
 
     .main-nav a {
-        padding: 5px 0; /* Μικρότερο padding για μικρότερο ύψος */
+        padding: 5px 0;
     }
 
     .register-container {
         padding: 20px;
-        box-shadow: none; /* Αφαίρεση του σκιασμού */
+        box-shadow: none;
         width: 100%;
-        box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν μεγαλώνει το πλάτος */
     }
 
     .input-group-triple,
     .input-group-half {
-        flex-direction: column; /* Κάνουμε τα πεδία των φορμών το ένα κάτω από το άλλο */
+        flex-direction: column;
         gap: 0;
     }
 
