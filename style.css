@@ -84,13 +84,16 @@ body {
     color: #555;
 }
 
+/* Εδώ είναι η διορθωμένη αλλαγή για το μέγεθος των γραμμάτων */
 .input-group input,
-.input-group select {
+.input-group select,
+.input-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 18px; /* Ορίζουμε το μέγεθος της γραμματοσειράς στα 18px */
 }
 
 /* Στυλ για το κουμπί εγγραφής */
@@ -125,7 +128,7 @@ body {
     text-decoration: underline;
 }
 
-/* Νέο στυλ για την ομαδοποίηση διεύθυνσης, αριθμού και ΤΚ */
+/* Στυλ για την ομαδοποίηση διεύθυνσης, αριθμού και ΤΚ */
 .input-group-triple {
     display: flex;
     gap: 15px;
@@ -145,7 +148,7 @@ body {
     flex: 1;
 }
 
-/* Νέο στυλ για τα πεδία email/τηλεφώνου και κωδικών */
+/* Στυλ για τα πεδία email/τηλεφώνου και κωδικών */
 .input-group-half {
     display: flex;
     gap: 15px;
@@ -153,6 +156,6 @@ body {
 }
 
 .input-group-half .input-group {
-    flex: 1; /* Αυτό κάνει τα πεδία να έχουν ίσο πλάτος (50/50) */
-    margin-bottom: 0; /* Αφαιρεί το επιπλέον κενό μεταξύ τους */
+    flex: 1;
+    margin-bottom: 0;
 }
