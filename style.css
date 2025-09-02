@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    overflow-x: hidden; /* Απαγορεύει την οριζόντια κύλιση */
 }
 
 /* Στυλ για την κεφαλίδα (header) */
@@ -84,7 +85,6 @@ body {
     color: #555;
 }
 
-/* Εδώ είναι η διορθωμένη αλλαγή για το μέγεθος των γραμμάτων */
 .input-group input,
 .input-group select,
 .input-group textarea {
@@ -164,24 +164,30 @@ body {
 
 /* Media Queries για κινητά τηλέφωνα */
 @media (max-width: 600px) {
-    .main-header {
-        flex-direction: column; /* Κάνουμε το header κάθετο */
-        text-align: center;
-        padding: 10px;
+    body {
+        padding: 0 10px; /* Προσθήκη μικρού κενού στα πλάγια */
     }
 
-    .main-header .logo {
-        margin-bottom: 10px; /* Προσθήκη κενού κάτω από το λογότυπο */
+    .main-header {
+        flex-direction: column; /* Κάνουμε το header κάθετο */
+        padding: 10px;
     }
 
     .main-nav ul {
         flex-direction: column; /* Κάνουμε το μενού κάθετο */
-        gap: 10px; /* Μικρότερο κενό μεταξύ των συνδέσμων */
+        gap: 8px; /* Μικρότερο κενό */
+        width: 100%; /* Γεμίζει το πλάτος */
+    }
+
+    .main-nav a {
+        padding: 5px 0; /* Μικρότερο padding για μικρότερο ύψος */
     }
 
     .register-container {
-        padding: 20px; /* Μικρότερο padding στις μικρές οθόνες */
-        box-shadow: none; /* Αφαίρεση του σκιασμού για πιο καθαρή εμφάνιση */
+        padding: 20px;
+        box-shadow: none; /* Αφαίρεση του σκιασμού */
+        width: 100%;
+        box-sizing: border-box; /* Εξασφαλίζει ότι το padding δεν μεγαλώνει το πλάτος */
     }
 
     .input-group-triple,
@@ -190,12 +196,11 @@ body {
         gap: 0;
     }
 
-    /* Ρυθμίσεις για τα πεδία μέσα στις ομάδες */
     .input-group.address-group,
     .input-group.number-group,
     .input-group.zip-group,
     .input-group-half .input-group {
-        flex: auto; /* Επαναφορά του πλάτους στο κανονικό */
+        flex: auto;
         margin-bottom: 15px;
     }
 }
