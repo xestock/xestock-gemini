@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xestock - Σύνδεση</title>
+    <title>Xestock - Επικοινωνία</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,21 +21,26 @@
 
     <main id="main-content">
         <div class="register-container">
-            <h2>Σύνδεση στο Xestock</h2>
-            <form id="login-form">
+            <h2>Επικοινώνησε μαζί μας</h2>
+            <form id="contact-form">
+                <div class="input-group">
+                    <label for="name">Όνομα:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
                 <div class="input-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Κωδικός Πρόσβασης:</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="subject">Θέμα:</label>
+                    <input type="text" id="subject" name="subject" required>
                 </div>
-                <button type="submit" class="register-button">Σύνδεση</button>
+                <div class="input-group">
+                    <label for="message">Μήνυμα:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="register-button">Αποστολή</button>
             </form>
-            <div class="login-link">
-                Δεν έχεις λογαριασμό; <a href="register.html">Εγγράψου εδώ</a>.
-            </div>
         </div>
     </main>
 
