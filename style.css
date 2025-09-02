@@ -2,14 +2,66 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Container για τη φόρμα εγγραφής */
+/* Στυλ για την κεφαλίδα (header) */
+.main-header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #f4f4f4;
+}
+
+/* Στυλ για το κυρίως περιεχόμενο (main) */
+#main-content {
+    min-height: calc(100vh - 100px); /* Αυτό εξασφαλίζει ότι το footer είναι πάντα στο κάτω μέρος της σελίδας */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px; /* Προσθέτει χώρο από την κεφαλίδα */
+}
+
+/* Στυλ για το υποσέλιδο (footer) */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Στυλ για το κεντρικό container της φόρμας */
 .register-container {
     background-color: #fff;
     padding: 30px;
@@ -20,13 +72,7 @@ body {
     text-align: center;
 }
 
-/* Τίτλος φόρμας */
-.register-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Ομάδα ετικέτας και πεδίου εισαγωγής */
+/* Στυλ για τις ομάδες εισαγωγής */
 .input-group {
     margin-bottom: 15px;
     text-align: left;
@@ -47,7 +93,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Κουμπί εγγραφής */
+/* Στυλ για το κουμπί εγγραφής */
 .register-button {
     width: 100%;
     padding: 12px;
@@ -64,7 +110,7 @@ body {
     background-color: #0056b3;
 }
 
-/* Σύνδεσμος για σύνδεση */
+/* Στυλ για τον σύνδεσμο σύνδεσης */
 .login-link {
     margin-top: 15px;
     font-size: 14px;
