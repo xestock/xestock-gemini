@@ -27,115 +27,7 @@ body {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-/* ΝΕΑ ΣΤΥΛ ΓΙΑ ΤΗ ΣΕΛΙΔΑ ΑΝΑΡΤΗΣΕΩΝ */
-.listings-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 900px;
-    margin-top: 50px;
-    text-align: center;
-}
 
-.listing-tabs {
-    display: flex;
-    justify-content: center;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 20px;
-}
-
-.listing-tab-button {
-    background: none;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
-    color: #555;
-    position: relative;
-    bottom: -2px;
-}
-
-.listing-tab-button:hover {
-    color: #003049;
-}
-
-.listing-tab-button.active {
-    color: #003049;
-    font-weight: bold;
-    border-bottom: 2px solid #fb8500;
-}
-
-.listings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    text-align: left;
-}
-
-.listing-card {
-    background-color: #fdf0d5;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.listing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.listing-image-placeholder {
-    width: 100%;
-    height: 150px;
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
-}
-
-.listing-content {
-    padding: 15px;
-}
-
-.listing-content h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #003049;
-}
-
-.listing-content p {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    color: #333;
-}
-
-.listing-actions {
-    padding: 0 15px 15px;
-}
-
-.view-details-button {
-    background-color: #fb8500;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-.view-details-button:hover {
-    background-color: #d17000;
-}
 .main-header .logo {
     font-size: 24px;
     font-weight: bold;
@@ -169,6 +61,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* Στυλ για το υποσέλιδο (footer) */
@@ -177,41 +70,6 @@ body {
     padding: 20px;
     background-color: #003049;
     color: #fff;
-}
-
-/* Στυλ για το κεντρικό container της φόρμας */
-.register-container,
-.login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-/* Στυλ για τα κουμπιά "Αναζητώ" και "Διαθέτω" */
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.action-button {
-    background-color: #003049;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.action-button:hover {
-    background-color: #001f2f;
 }
 
 /* Στυλ για τις ομάδες εισαγωγής */
@@ -437,28 +295,45 @@ body {
     color: #003049;
 }
 
-.form-container {
+/* ΝΕΑ ΣΤΥΛ ΓΙΑ ΤΙΣ ΚΑΡΤΕΣ ΤΩΝ ΦΟΡΜΩΝ */
+.login-card, .register-card, .contact-card, .dashboard-card {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
     width: 100%;
-    max-width: 500px;
-}
-
-/* ΝΕΟ ΣΤΥΛ ΓΙΑ ΤΟ DASHBOARD */
-.dashboard-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
     text-align: center;
-    margin-top: 50px;
 }
 
+/* Μοναδικό στυλ για την κάρτα Σύνδεσης */
+.login-card {
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Μοναδικό στυλ για την κάρτα Εγγραφής */
+.register-card {
+    max-width: 550px;
+    border-bottom: 5px solid #fb8500;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Μοναδικό στυλ για την κάρτα Επικοινωνίας */
+.contact-card {
+    max-width: 600px;
+    border-top: 5px solid #fb8500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Μοναδικό στυλ για τον Πίνακα Ελέγχου */
+.dashboard-card {
+    max-width: 600px;
+    border-left: 5px solid #003049;
+    border-right: 5px solid #fb8500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Στυλ για το dashboard tabbed UI */
 .tab-buttons {
     display: flex;
     justify-content: center;
@@ -496,13 +371,121 @@ body {
 }
 
 
-/* --- Media Queries για κινητά τηλέφωνα --- */
+/* Στυλ για τη σελίδα αναρτήσεων */
+.listings-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.listing-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.listing-tab-button {
+    background: none;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    color: #555;
+    position: relative;
+    bottom: -2px;
+}
+
+.listing-tab-button:hover {
+    color: #003049;
+}
+
+.listing-tab-button.active {
+    color: #003049;
+    font-weight: bold;
+    border-bottom: 2px solid #fb8500;
+}
+
+.listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.listing-card {
+    background-color: #fdf0d5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.listing-image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.listing-content {
+    padding: 15px;
+}
+
+.listing-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #003049;
+}
+
+.listing-content p {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.listing-actions {
+    padding: 0 15px 15px;
+}
+
+.view-details-button {
+    background-color: #fb8500;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+    background-color: #d17000;
+}
+
+/* Media Queries για κινητά τηλέφωνα */
 @media (max-width: 600px) {
     body {
         padding: 0 10px;
     }
 
-    /* Κρύβουμε το μενού και εμφανίζουμε το toggle button */
     .main-nav {
         display: none;
         flex-direction: column !important;
@@ -565,11 +548,11 @@ body {
         transform: translateY(5px);
     }
     
-    /* Διορθώσεις για τη φόρμα */
-    .register-container, .login-container {
+    .login-card, .register-card, .contact-card, .dashboard-card, .listings-container {
         padding: 20px !important;
         box-shadow: none !important;
         width: 100% !important;
+        margin-top: 20px !important;
     }
 
     .input-group-triple,
@@ -587,13 +570,7 @@ body {
         margin-bottom: 15px !important;
     }
 
-    /* Pop-up για κινητά */
     .modal-content {
         margin: 5% auto !important;
-    }
-    
-    .dashboard-card {
-        padding: 10px;
-        margin-top: 20px;
     }
 }
