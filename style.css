@@ -164,8 +164,6 @@ body {
     margin-bottom: 0;
 }
 
----
-
 /* Media Queries για κινητά τηλέφωνα */
 @media (max-width: 600px) {
     body {
@@ -197,7 +195,7 @@ body {
     .input-group-half {
         flex-direction: column !important;
         gap: 0 !important;
-        align-items: stretch !important; /* Εδώ είναι η διόρθωση */
+        align-items: stretch !important;
     }
 
     .input-group.address-group,
