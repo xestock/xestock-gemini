@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xestock - Dashboard</title>
+    <title>Xestock - Πίνακας Ελέγχου</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,12 +18,15 @@
                 <li><a href="login.html">Σύνδεση</a></li>
                 <li><a href="register.html">Εγγραφή</a></li>
                 <li><a href="contact.html">Επικοινωνία</a></li>
+                <li><a href="dashboard.html">Πίνακας Ελέγχου</a></li>
+                <li><a href="listings.html">Αναρτήσεις</a></li>
+                <li><a href="#">Αποσύνδεση</a></li>
             </ul>
         </nav>
     </header>
     <main id="main-content">
         <div class="dashboard-card">
-            <h2>Δημιουργία Αγγελίας</h2>
+            <h2>Πίνακας Ελέγχου</h2>
             <div class="tab-buttons">
                 <button id="anazito-button" class="tab-button active">
                     <span class="icon">🔍</span> Αναζητώ
@@ -84,6 +87,10 @@
                             <input type="text" id="anazito-code" name="product_code" placeholder="π.χ. SKU, ISBN, EAN, MPN">
                         </div>
                         <div class="input-group">
+                            <label for="anazito-image">Φωτογραφία:</label>
+                            <input type="file" id="anazito-image" name="image" accept="image/*">
+                        </div>
+                        <div class="input-group">
                             <label for="anazito-info">Πρόσθετες Πληροφορίες:</label>
                             <textarea id="anazito-info" name="additional_info" rows="4" placeholder="π.χ. Μοντέλο, έτος, χρώμα"></textarea>
                         </div>
@@ -139,6 +146,10 @@
                         <div class="input-group">
                             <label for="diatheto-code">Κωδικός Προϊόντος:</label>
                             <input type="text" id="diatheto-code" name="product_code" placeholder="π.χ. SKU, ISBN, EAN, MPN">
+                        </div>
+                         <div class="input-group">
+                            <label for="diatheto-image">Φωτογραφία:</label>
+                            <input type="file" id="diatheto-image" name="image" accept="image/*">
                         </div>
                         <div class="input-group">
                             <label for="diatheto-info">Πρόσθετες Πληροφορίες:</label>

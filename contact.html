@@ -18,30 +18,33 @@
                 <li><a href="login.html">Σύνδεση</a></li>
                 <li><a href="register.html">Εγγραφή</a></li>
                 <li><a href="contact.html">Επικοινωνία</a></li>
+                <li><a href="dashboard.html">Πίνακας Ελέγχου</a></li>
+                <li><a href="listings.html">Αναρτήσεις</a></li>
+                <li><a href="#">Αποσύνδεση</a></li>
             </ul>
         </nav>
     </header>
     <main id="main-content">
-        <div class="register-container">
-            <h2>Επικοινώνησε μαζί μας</h2>
+        <div class="contact-card">
+            <h2>Επικοινωνία</h2>
             <form id="contact-form">
                 <div class="input-group">
-                    <label for="name">Όνομα:</label>
+                    <label for="name">Όνομα *:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="input-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email *:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
-                    <label for="subject">Θέμα:</label>
+                    <label for="subject">Θέμα *:</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
                 <div class="input-group">
-                    <label for="message">Μήνυμα:</label>
-                    <textarea id="message" name="message" rows="5" required style="resize: none;"></textarea>
+                    <label for="message">Μήνυμα *:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
-                <button type="submit" class="register-button">Αποστολή</button>
+                <button type="submit" class="submit-button">Αποστολή</button>
             </form>
         </div>
     </main>

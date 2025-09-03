@@ -18,27 +18,28 @@
                 <li><a href="login.html">Σύνδεση</a></li>
                 <li><a href="register.html">Εγγραφή</a></li>
                 <li><a href="contact.html">Επικοινωνία</a></li>
+                <li><a href="dashboard.html">Πίνακας Ελέγχου</a></li>
+                <li><a href="listings.html">Αναρτήσεις</a></li>
+                <li><a href="#">Αποσύνδεση</a></li>
             </ul>
         </nav>
     </header>
     <main id="main-content">
-        <div class="login-container">
+        <div class="login-card">
             <h2>Σύνδεση</h2>
             <form id="login-form">
                 <div class="input-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email *:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Κωδικός Πρόσβασης:</label>
+                    <label for="password">Κωδικός *:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit" class="login-button">Σύνδεση</button>
                 <p id="error-message" class="error-message"></p>
             </form>
-            <div class="register-link">
-                Δεν έχεις λογαριασμό; <a href="register.html">Εγγράψου εδώ</a>.
-            </div>
+            <p class="register-link">Δεν έχεις λογαριασμό; <a href="register.html">Εγγράψου τώρα!</a></p>
         </div>
     </main>
     <footer class="main-footer">
