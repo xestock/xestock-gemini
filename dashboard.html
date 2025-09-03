@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xestock - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo">Xestock</a>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Αρχική</a></li>
+                <li><a href="login.html">Σύνδεση</a></li>
+                <li><a href="register.html">Εγγραφή</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-content">
+        <div class="dashboard-card">
+            <h2>Δημιουργία Αγγελίας</h2>
+            <div class="tab-buttons">
+                <button id="anazito-button" class="tab-button active">
+                    <span class="icon">🔍</span> Αναζητώ
+                </button>
+                <button id="diatheto-button" class="tab-button">
+                    <span class="icon">📦</span> Διαθέτω
+                </button>
+            </div>
+            
+            <div class="forms-container">
+                <div id="anazito-form-container" class="form-container">
+                    <h3>Αναζήτηση Προϊόντος</h3>
+                    <form id="anazito-form">
+                        <div class="input-group">
+                            <label for="anazito-category">Κατηγορία *:</label>
+                            <select id="anazito-category" name="category" required>
+                                <option value="">Επιλέξτε κατηγορία</option>
+                                <option value="autoparts">Ανταλλακτικά Αυτοκινήτων</option>
+                                <option value="moto-parts">Ανταλλακτικά Μηχανών</option>
+                                <option value="home-appliance-parts">Ανταλλακτικά Οικιακών Συσκευών</option>
+                                <option value="bike-parts">Ανταλλακτικά Ποδηλάτων</option>
+                                <option value="boat-parts">Ανταλλακτικά Σκαφών</option>
+                                <option value="bookstore">Βιβλιοπωλείο</option>
+                                <option value="diy">Είδη DIY</option>
+                                <option value="office-supplies">Είδη Γραφείου</option>
+                                <option value="gift-shop">Είδη Δώρων</option>
+                                <option value="pet-shop">Είδη Pet</option>
+                                <option value="electronics">Ηλεκτρονικά</option>
+                                <option value="electrical-material">Ηλεκτρολογικό Υλικό</option>
+                                <option value="toys">Παιχνίδια</option>
+                                <option value="pharmacy">Φαρμακείο</option>
+                                <option value="paints-plumbing">Χρώματα - Υδραυλικά</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="anazito-product">Προϊόν *:</label>
+                            <input type="text" id="anazito-product" name="product" placeholder="Περιγράψτε τι αναζητάτε" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Κατάσταση *:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="anazito-new" name="condition" value="καινούργιο" required>
+                                <label for="anazito-new">Καινούργιο</label>
+                                <input type="radio" id="anazito-used" name="condition" value="μεταχειρισμένο" required>
+                                <label for="anazito-used">Μεταχειρισμένο</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="anazito-quantity">Ποσότητα *:</label>
+                            <input type="number" id="anazito-quantity" name="quantity" placeholder="π.χ. 1, 5, 20 τεμάχια" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="anazito-manufacturer">Κατασκευαστής:</label>
+                            <input type="text" id="anazito-manufacturer" name="manufacturer" placeholder="π.χ. Κατασκευαστής, Παραγωγός, Εκδότης">
+                        </div>
+                        <div class="input-group">
+                            <label for="anazito-code">Κωδικός Προϊόντος:</label>
+                            <input type="text" id="anazito-code" name="product_code" placeholder="π.χ. SKU, ISBN, EAN, MPN">
+                        </div>
+                        <div class="input-group">
+                            <label for="anazito-info">Πρόσθετες Πληροφορίες:</label>
+                            <textarea id="anazito-info" name="additional_info" rows="4" placeholder="π.χ. Μοντέλο, έτος, χρώμα"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Υποβολή</button>
+                    </form>
+                </div>
+
+                <div id="diatheto-form-container" class="form-container" style="display: none;">
+                    <h3>Διαθέσιμο Προϊόν</h3>
+                    <form id="diatheto-form">
+                        <div class="input-group">
+                            <label for="diatheto-category">Κατηγορία *:</label>
+                            <select id="diatheto-category" name="category" required>
+                                <option value="">Επιλέξτε κατηγορία</option>
+                                <option value="autoparts">Ανταλλακτικά Αυτοκινήτων</option>
+                                <option value="moto-parts">Ανταλλακτικά Μηχανών</option>
+                                <option value="home-appliance-parts">Ανταλλακτικά Οικιακών Συσκευών</option>
+                                <option value="bike-parts">Ανταλλακτικά Ποδηλάτων</option>
+                                <option value="boat-parts">Ανταλλακτικά Σκαφών</option>
+                                <option value="bookstore">Βιβλιοπωλείο</option>
+                                <option value="diy">Είδη DIY</option>
+                                <option value="office-supplies">Είδη Γραφείου</option>
+                                <option value="gift-shop">Είδη Δώρων</option>
+                                <option value="pet-shop">Είδη Pet</option>
+                                <option value="electronics">Ηλεκτρονικά</option>
+                                <option value="electrical-material">Ηλεκτρολογικό Υλικό</option>
+                                <option value="toys">Παιχνίδια</option>
+                                <option value="pharmacy">Φαρμακείο</option>
+                                <option value="paints-plumbing">Χρώματα - Υδραυλικά</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="diatheto-product">Προϊόν *:</label>
+                            <input type="text" id="diatheto-product" name="product" placeholder="Περιγράψτε τι διαθέτετε" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Κατάσταση *:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="diatheto-new" name="condition" value="καινούργιο" required>
+                                <label for="diatheto-new">Καινούργιο</label>
+                                <input type="radio" id="diatheto-used" name="condition" value="μεταχειρισμένο" required>
+                                <label for="diatheto-used">Μεταχειρισμένο</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="diatheto-quantity">Ποσότητα *:</label>
+                            <input type="number" id="diatheto-quantity" name="quantity" placeholder="π.χ. 1, 5, 20 τεμάχια" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="diatheto-manufacturer">Κατασκευαστής:</label>
+                            <input type="text" id="diatheto-manufacturer" name="manufacturer" placeholder="π.χ. Κατασκευαστής, Παραγωγός, Εκδότης">
+                        </div>
+                        <div class="input-group">
+                            <label for="diatheto-code">Κωδικός Προϊόντος:</label>
+                            <input type="text" id="diatheto-code" name="product_code" placeholder="π.χ. SKU, ISBN, EAN, MPN">
+                        </div>
+                        <div class="input-group">
+                            <label for="diatheto-info">Πρόσθετες Πληροφορίες:</label>
+                            <textarea id="diatheto-info" name="additional_info" rows="4" placeholder="π.χ. Μοντέλο, έτος, χρώμα"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Υποβολή</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2025 Xestock. Όλα τα δικαιώματα κατοχυρωμένα.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

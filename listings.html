@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xestock - Σύνδεση</title>
+    <title>Xestock - Αναρτήσεις</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,23 +22,18 @@
         </nav>
     </header>
     <main id="main-content">
-        <div class="login-container">
-            <h2>Σύνδεση</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Κωδικός Πρόσβασης:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="login-button">Σύνδεση</button>
-                <p id="error-message" class="error-message"></p>
-            </form>
-            <div class="register-link">
-                Δεν έχεις λογαριασμό; <a href="register.html">Εγγράψου εδώ</a>.
+        <div class="listings-container">
+            <h2>Διαθέσιμες Αναρτήσεις</h2>
+            <div class="listing-tabs">
+                <button class="listing-tab-button active" data-type="seek">Αναζητώ</button>
+                <button class="listing-tab-button" data-type="offer">Διαθέτω</button>
             </div>
+            
+            <div id="seek-listings" class="listings-grid">
+                </div>
+            
+            <div id="offer-listings" class="listings-grid" style="display: none;">
+                </div>
         </div>
     </main>
     <footer class="main-footer">
