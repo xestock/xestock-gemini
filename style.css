@@ -294,7 +294,7 @@ body {
 }
 
 /* Στυλ για τις κάρτες των φορμών */
-.login-card, .register-card, .contact-card, .dashboard-card, .welcome-card {
+.login-card, .register-card, .contact-card, .dashboard-card, .welcome-card, .listings-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
