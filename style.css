@@ -12,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+/* Κρύβει το κουμπί του μενού στην έκδοση για υπολογιστές */
+.nav-toggle {
+    display: none;
+}
+
 /* Στυλ για την κεφαλίδα (header) */
 .main-header {
     background-color: #003049;
