@@ -82,6 +82,29 @@ body {
     text-align: center;
 }
 
+/* Στυλ για τα κουμπιά "Αναζητώ" και "Διαθέτω" */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    background-color: #003049;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #001f2f;
+}
+
 /* Στυλ για τις ομάδες εισαγωγής */
 .input-group {
     margin-bottom: 15px;
