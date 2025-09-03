@@ -18,72 +18,101 @@
                 <li><a href="login.html">Σύνδεση</a></li>
                 <li><a href="register.html">Εγγραφή</a></li>
                 <li><a href="contact.html">Επικοινωνία</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="listings.html">Αναρτήσεις</a></li>
-                <li><a href="#">Αποσύνδεση</a></li>
             </ul>
         </nav>
     </header>
     <main id="main-content">
-        <div class="register-card">
-            <h2>Εγγραφή</h2>
+        <div class="register-container">
+            <h2>Εγγραφή στο Xestock</h2>
             <form id="register-form">
-                <div class="input-group-half">
-                    <div class="input-group">
-                        <label for="firstname">Όνομα *:</label>
-                        <input type="text" id="firstname" name="firstname" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="lastname">Επώνυμο *:</label>
-                        <input type="text" id="lastname" name="lastname" required>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label for="company">Επωνυμία Εταιρείας:</label>
-                    <input type="text" id="company" name="company">
-                </div>
                 <div class="input-group">
                     <label for="afm">ΑΦΜ:</label>
-                    <input type="text" id="afm" name="afm">
+                    <input type="text" id="afm" name="afm" required>
                 </div>
-                <div class="input-group-half">
-                    <div class="input-group">
-                        <label for="phone">Τηλέφωνο *:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email *:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                <div class="input-group">
+                    <label for="businessName">Επωνυμία Επιχείρησης:</label>
+                    <input type="text" id="businessName" name="businessName" required>
                 </div>
+                <div class="input-group">
+                    <label for="category">Κατηγορία:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Επιλέξτε κατηγορία</option>
+                        <option value="autoparts">Ανταλλακτικά Αυτοκινήτων</option>
+                        <option value="moto-parts">Ανταλλακτικά Μηχανών</option>
+                        <option value="home-appliance-parts">Ανταλλακτικά Οικιακών Συσκευών</option>
+                        <option value="bike-parts">Ανταλλακτικά Ποδηλάτων</option>
+                        <option value="boat-parts">Ανταλλακτικά Σκαφών</option>
+                        <option value="bookstore">Βιβλιοπωλείο</option>
+                        <option value="diy">Είδη DIY (Χρώματα, εργαλεία, είδη κήπου)</option>
+                        <option value="office-supplies">Είδη Γραφείου (Χαρτικά, μελάνια, αναλώσιμα)</option>
+                        <option value="gift-shop">Είδη Δώρων (Διακοσμητικά, gadgets, είδη σπιτιού)</option>
+                        <option value="pet-shop">Είδη Pet (Τροφές, παιχνίδια, αξεσουάρ)</option>
+                        <option value="electronics">Ηλεκτρονικά (Τηλεοράσεις, υπολογιστές, οικιακές συσκευές)</option>
+                        <option value="electrical-material">Ηλεκτρολογικό Υλικό</option>
+                        <option value="toys">Παιχνίδια (Επιτραπέζια, παιδικά, hobbies)</option>
+                        <option value="pharmacy">Φαρμακείο</option>
+                        <option value="paints-plumbing">Χρώματα - Υδραυλικά</option>
+                    </select>
+                </div>
+                <button type="button" class="suggest-button">Πρότεινε μια κατηγορία</button>
                 <div class="input-group-triple">
                     <div class="input-group address-group">
-                        <label for="address">Διεύθυνση *:</label>
+                        <label for="address">Διεύθυνση:</label>
                         <input type="text" id="address" name="address" required>
                     </div>
                     <div class="input-group number-group">
-                        <label for="number">Αριθμός *:</label>
-                        <input type="text" id="number" name="number" required>
+                        <label for="address-number">Αριθμός:</label>
+                        <input type="text" id="address-number" name="address-number">
                     </div>
                     <div class="input-group zip-group">
-                        <label for="zipcode">Τ.Κ. *:</label>
-                        <input type="text" id="zipcode" name="zipcode" required>
+                        <label for="zipCode">ΤΚ:</label>
+                        <input type="text" id="zipCode" name="zipCode" required>
                     </div>
                 </div>
                 <div class="input-group-half">
                     <div class="input-group">
-                        <label for="password">Κωδικός *:</label>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Τηλέφωνο:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="input-group-half">
+                    <div class="input-group">
+                        <label for="password">Κωδικός Πρόσβασης:</label>
                         <input type="password" id="password" name="password" required>
                     </div>
                     <div class="input-group">
-                        <label for="confirm-password">Επιβεβαίωση Κωδικού *:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <label for="confirmPassword">Επιβεβαίωση Κωδικού:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
                     </div>
                 </div>
                 <button type="submit" class="register-button">Εγγραφή</button>
-                <p id="error-message" class="error-message"></p>
             </form>
-            <p class="login-link">Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ!</a></p>
+            <div class="login-link">
+                Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ</a>.
+            </div>
+            <div id="suggest-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Πρότεινε μια κατηγορία</h3>
+                    <p>Δεν βρήκες την κατηγορία σου; Γράψε μας την πρότασή σου και θα την εξετάσουμε!</p>
+                    <form id="suggest-form" action="https://formspree.io/f/xandprbr" method="POST">
+                        <div class="input-group">
+                            <label for="suggested-category">Προτεινόμενη Κατηγορία:</label>
+                            <input type="text" id="suggested-category" name="suggested-category" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="suggested-email">Email:</label>
+                            <input type="email" id="suggested-email" name="email" required>
+                        </div>
+                        <button type="submit" class="register-button">Υποβολή</button>
+                    </form>
+                    <div id="suggest-message" class="message-text"></div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="main-footer">

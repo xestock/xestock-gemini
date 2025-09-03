@@ -59,7 +59,8 @@ body {
     min-height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 50px;
 }
 
 /* Στυλ για το υποσέλιδο (footer) */
@@ -68,6 +69,41 @@ body {
     padding: 20px;
     background-color: #003049;
     color: #fff;
+}
+
+/* Στυλ για το κεντρικό container της φόρμας */
+.register-container,
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Στυλ για τα κουμπιά "Αναζητώ" και "Διαθέτω" */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    background-color: #003049;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #001f2f;
 }
 
 /* Στυλ για τις ομάδες εισαγωγής */
@@ -293,36 +329,28 @@ body {
     color: #003049;
 }
 
-/* Στυλ για τις κάρτες των φορμών */
-.login-card, .register-card, .contact-card, .dashboard-card, .welcome-card, .listings-container {
+.form-container {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
-/* Στυλ για την αρχική σελίδα */
-.welcome-card h1 {
-    font-size: 24px;
-    color: #003049;
+/* ΝΕΟ ΣΤΥΛ ΓΙΑ ΤΟ DASHBOARD */
+.dashboard-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 50px;
 }
 
-.welcome-card p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.welcome-card a {
-    color: #fb8500;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Στυλ για το dashboard tabbed UI */
 .tab-buttons {
     display: flex;
     justify-content: center;
@@ -340,6 +368,9 @@ body {
     color: #555;
     position: relative;
     bottom: -2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .tab-button:hover {
@@ -352,12 +383,18 @@ body {
     border-bottom: 2px solid #fb8500;
 }
 
-/* Media Queries για κινητά τηλέφωνα */
+.tab-button .icon {
+    font-size: 20px;
+}
+
+
+/* --- Media Queries για κινητά τηλέφωνα --- */
 @media (max-width: 600px) {
     body {
         padding: 0 10px;
     }
 
+    /* Κρύβουμε το μενού και εμφανίζουμε το toggle button */
     .main-nav {
         display: none;
         flex-direction: column !important;
@@ -420,11 +457,11 @@ body {
         transform: translateY(5px);
     }
     
-    .login-card, .register-card, .contact-card, .dashboard-card, .welcome-card, .listings-container {
+    /* Διορθώσεις για τη φόρμα */
+    .register-container, .login-container {
         padding: 20px !important;
         box-shadow: none !important;
         width: 100% !important;
-        margin-top: 20px !important;
     }
 
     .input-group-triple,
@@ -442,7 +479,13 @@ body {
         margin-bottom: 15px !important;
     }
 
+    /* Pop-up για κινητά */
     .modal-content {
         margin: 5% auto !important;
+    }
+    
+    .dashboard-card {
+        padding: 10px;
+        margin-top: 20px;
     }
 }
