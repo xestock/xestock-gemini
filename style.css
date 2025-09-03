@@ -165,15 +165,29 @@ body {
     margin-bottom: 0;
 }
 
-/* Media Queries για κινητά τηλέφωνα */
+/* --- Media Queries για κινητά τηλέφωνα --- */
 @media (max-width: 600px) {
     body {
         padding: 0 10px;
     }
 
-    .main-header {
+    /* Κρύβουμε το μενού και εμφανίζουμε το toggle button */
+    .main-nav {
+        display: none;
         flex-direction: column !important;
-        padding: 10px !important;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #003049;
+        text-align: center;
+        padding-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .main-nav.show {
+        display: flex;
     }
 
     .main-nav ul {
@@ -183,9 +197,44 @@ body {
     }
 
     .main-nav a {
-        padding: 5px 0 !important;
+        padding: 10px 0 !important;
+        display: block;
+    }
+    
+    .main-header {
+        flex-direction: row !important;
+        padding: 15px 20px !important;
+        justify-content: space-between;
+    }
+    
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
     }
 
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger::before {
+        transform: translateY(-8px);
+    }
+
+    .hamburger::after {
+        transform: translateY(5px);
+    }
+    
+    /* Διορθώσεις για τη φόρμα */
     .register-container {
         padding: 20px !important;
         box-shadow: none !important;
