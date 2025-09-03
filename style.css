@@ -129,8 +129,8 @@ body {
     resize: none;
 }
 
-/* Στυλ για το κουμπί εγγραφής */
-.register-button {
+/* Στυλ για το κουμπί εγγραφής και πρότασης κατηγορίας */
+.register-button, .suggest-button {
     width: 100%;
     padding: 12px;
     background-color: #fb8500;
@@ -142,8 +142,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.register-button:hover {
+.register-button:hover, .suggest-button:hover {
     background-color: #d17000;
+}
+
+.suggest-button {
+    margin-bottom: 15px;
+    background-color: #003049;
+}
+
+.suggest-button:hover {
+    background-color: #001f2f;
 }
 
 /* Στυλ για τον σύνδεσμο σύνδεσης */
@@ -191,6 +200,52 @@ body {
 .input-group-half .input-group {
     flex: 1;
     margin-bottom: 0;
+}
+
+/* --- Pop-up (Modal) Στυλ --- */
+.modal {
+    display: none; /* Κρύβεται εξ'αρχής */
+    position: fixed; /* Παραμένει στη θέση του, πάνω από τη σελίδα */
+    z-index: 2000; /* Έχει μεγάλη τιμή για να εμφανίζεται πάνω από όλα */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Ημιδιαφανές μαύρο φόντο */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Κεντράρει το παράθυρο */
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.message-text {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #003049;
 }
 
 /* --- Media Queries για κινητά τηλέφωνα --- */
@@ -282,5 +337,10 @@ body {
     .input-group-half .input-group {
         flex: auto !important;
         margin-bottom: 15px !important;
+    }
+
+    /* Pop-up για κινητά */
+    .modal-content {
+        margin: 5% auto !important;
     }
 }

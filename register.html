@@ -54,6 +54,7 @@
                         <option value="paints-plumbing">Χρώματα - Υδραυλικά</option>
                     </select>
                 </div>
+                <button type="button" class="suggest-button">Πρότεινε μια κατηγορία</button>
                 <div class="input-group-triple">
                     <div class="input-group address-group">
                         <label for="address">Διεύθυνση:</label>
@@ -92,6 +93,21 @@
             </form>
             <div class="login-link">
                 Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ</a>.
+            </div>
+            <div id="suggest-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Πρότεινε μια κατηγορία</h3>
+                    <p>Δεν βρήκες την κατηγορία σου; Γράψε μας την πρότασή σου και θα την εξετάσουμε!</p>
+                    <form id="suggest-form" action="https://formspree.io/f/xbjnovqy" method="POST">
+                        <div class="input-group">
+                            <label for="suggested-category">Προτεινόμενη Κατηγορία:</label>
+                            <input type="text" id="suggested-category" name="suggested-category" required>
+                        </div>
+                        <button type="submit" class="register-button">Υποβολή</button>
+                    </form>
+                    <div id="suggest-message" class="message-text"></div>
+                </div>
             </div>
         </div>
     </main>
