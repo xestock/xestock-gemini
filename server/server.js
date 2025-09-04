@@ -1,20 +1,18 @@
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose'); // <-- Το νέο μας εργαλείο
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const PORT = 3001;
 
 // --- Σύνδεση με τη Βάση Δεδομένων MongoDB ---
-// Αυτή είναι η διεύθυνση της τοπικής μας βάσης δεδομένων.
-// 'xestock-db' είναι το όνομα που δίνουμε στη βάση μας.
 const dbURI = 'mongodb://localhost:27017/xestock-db';
 mongoose.connect(dbURI)
     .then(() => console.log('Η σύνδεση με το MongoDB ήταν επιτυχής!'))
     .catch(err => console.error('Σφάλμα σύνδεσης με MongoDB:', err));
 
-// --- Δημιουργία "Μοντέλου" Χρήστη ---
-// Εδώ ορίζουμε τους κανόνες για το πώς θα μοιάζει ένας χρήστης στη βάση μας.
+// --- Μοντέλο Χρήστη ---
 const userSchema = new mongoose.Schema({
     vat: { type: String, required: true, unique: true },
     companyName: { type: String, required: true },
@@ -26,36 +24,38 @@ const userSchema = new mongoose.Schema({
     phone: String,
     password: { type: String, required: true }
 });
-
-// Δημιουργούμε το "εργαλείο" (Model) που θα χρησιμοποιούμε για να διαχειριζόμαστε τους χρήστες.
 const User = mongoose.model('User', userSchema);
-
 
 // --- Middlewares ---
 app.use(express.static(path.join(__dirname, '..')));
 app.use(express.json());
 
 
-// --- API Endpoint για την εγγραφή (Αναβαθμισμένο) ---
+// --- API Endpoint για την εγγραφή (Αναβαθμισμένο με Έλεγχο Διπλοτύπων) ---
 app.post('/api/register', async (req, res) => {
-    console.log('Έφτασαν νέα δεδομένα εγγραφής:', req.body);
-    
     try {
-        // Παίρνουμε τα δεδομένα από τη φόρμα
-        const userData = req.body;
+        const { vat, email, password } = req.body;
 
-        // Δημιουργούμε έναν νέο χρήστη χρησιμοποιώντας το Model
-        const newUser = new User(userData);
-
-        // Τον αποθηκεύουμε στη βάση δεδομένων
+        // --- ΝΕΟΣ ΕΛΕΓΧΟΣ: Ψάξε αν υπάρχει ήδη χρήστης με αυτό το ΑΦΜ ή Email ---
+        const existingUser = await User.findOne({ $or: [{ vat: vat }, { email: email }] });
+        if (existingUser) {
+            console.log('Αποτυχημένη προσπάθεια εγγραφής: Ο χρήστης υπάρχει ήδη.');
+            // Στέλνουμε πίσω ένα σφάλμα 409 (Conflict) που σημαίνει ότι η εγγραφή συγκρούεται με μια υπάρχουσα.
+            return res.status(409).json({ message: 'Το ΑΦΜ ή το Email χρησιμοποιείται ήδη.' });
+        }
+        
+        // Αν δεν υπάρχει, συνεχίζουμε κανονικά...
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        const newUser = new User({ ...req.body, password: hashedPassword });
         await newUser.save();
 
-        console.log('Ο χρήστης αποθηκεύτηκε επιτυχώς στη βάση δεδομένων!');
-        res.json({ message: 'Η εγγραφή ολοκληρώθηκε και ο χρήστης αποθηκεύτηκε!' });
+        console.log('Ο χρήστης αποθηκεύτηκε επιτυχώς με κρυπτογραφημένο κωδικό!');
+        res.json({ message: 'Η εγγραφή ολοκληρώθηκε και ο χρήστης αποθηκεύτηκε με ασφάλεια!' });
 
     } catch (error) {
+        // Αυτό το catch πιάνει πλέον άλλα, απρόβλεπτα σφάλματα.
         console.error('Σφάλμα κατά την αποθήκευση του χρήστη:', error);
-        // Στέλνουμε πίσω ένα μήνυμα λάθους
         res.status(500).json({ message: 'Σφάλμα κατά την εγγραφή του χρήστη.' });
     }
 });
