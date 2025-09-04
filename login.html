@@ -3,47 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xestock - Σύνδεση</title>
+    <title>Σύνδεση - xestock</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <a href="index.html" class="logo">Xestock</a>
-        <button class="nav-toggle" aria-label="toggle navigation">
-            <span class="hamburger"></span>
-        </button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Αρχική</a></li>
-                <li><a href="login.html">Σύνδεση</a></li>
-                <li><a href="register.html">Εγγραφή</a></li>
-                <li><a href="contact.html">Επικοινωνία</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main id="main-content">
-        <div class="login-container">
-            <h2>Σύνδεση</h2>
-            <form id="login-form">
+
+    <main class="login-container">
+        <div class="login-box">
+            <h2>Σύνδεση στο xestock</h2>
+            <form id="loginForm">
                 <div class="input-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="test@xestock.gr" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Κωδικός Πρόσβασης:</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password">Κωδικός</label>
+                    <input type="password" id="password" name="password" placeholder="123456" required>
                 </div>
-                <button type="submit" class="login-button">Σύνδεση</button>
-                <p id="error-message" class="error-message"></p>
+                <button type="submit">Σύνδεση</button>
+                <p id="errorMessage" class="error-message"></p>
             </form>
-            <div class="register-link">
-                Δεν έχεις λογαριασμό; <a href="register.html">Εγγράψου εδώ</a>.
-            </div>
         </div>
     </main>
-    <footer class="main-footer">
-        <p>&copy; 2025 Xestock. Όλα τα δικαιώματα κατοχυρωμένα.</p>
-    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
