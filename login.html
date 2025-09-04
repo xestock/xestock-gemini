@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Σύνδεση - xestock</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Σύνδεση - Xestock</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <main class="login-container">
-        <div class="login-box">
-            <h2>Σύνδεση στο xestock</h2>
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="test@xestock.gr" required>
+    <header class="main-header">
+        <div class="logo">Xestock</div>
+        <nav class="main-nav">
+            <a href="#">Αρχική</a>
+            <a href="#">Σύνδεση</a>
+            <a href="#">Εγγραφή</a>
+            <a href="#">Επικοινωνία</a>
+        </nav>
+    </header>
+
+    <main class="login-page-container">
+        <div class="login-form-box">
+            <h1>Σύνδεση</h1>
+            
+            <form id="loginForm" novalidate>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="input-group">
-                    <label for="password">Κωδικός</label>
-                    <input type="password" id="password" name="password" placeholder="123456" required>
+                
+                <div class="form-group">
+                    <label for="password">Κωδικός Πρόσβασης:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Σύνδεση</button>
+                
+                <button type="submit" class="login-button">Σύνδεση</button>
+                
                 <p id="errorMessage" class="error-message"></p>
+
+                <p class="register-link">
+                    Δεν έχεις λογαριασμό; <a href="#">Εγγράψου εδώ.</a>
+                </p>
             </form>
         </div>
     </main>
