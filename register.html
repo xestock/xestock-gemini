@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xestock - Εγγραφή</title>
+    <title>Εγγραφή - Xestock</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="main-header">
         <a href="index.html" class="logo">Xestock</a>
         <nav class="main-nav">
@@ -14,79 +15,91 @@
                 <li><a href="index.html">Αρχική</a></li>
                 <li><a href="login.html">Σύνδεση</a></li>
                 <li><a href="register.html">Εγγραφή</a></li>
+                <li><a href="contact.html">Επικοινωνία</a></li>
             </ul>
         </nav>
+        <button class="nav-toggle">
+            <span class="hamburger"></span>
+        </button>
     </header>
 
     <main id="main-content">
         <div class="register-container">
-            <h2>Εγγραφή στο Xestock</h2>
-            <form id="register-form">
+            <h1>Δημιουργία Λογαριασμού</h1>
+            <form id="registerForm">
+
                 <div class="input-group">
-                    <label for="afm">ΑΦΜ:</label>
-                    <input type="text" id="afm" name="afm" required>
+                    <label for="vat-number">Α.Φ.Μ. <span class="required">*</span></label>
+                    <input type="text" id="vat-number" name="vat-number" required>
                 </div>
+
                 <div class="input-group">
-                    <label for="businessName">Επωνυμία Επιχείρησης:</label>
-                    <input type="text" id="businessName" name="businessName" required>
+                    <label for="company-name">Επωνυμία Επιχείρησης <span class="required">*</span></label>
+                    <input type="text" id="company-name" name="company-name" required>
                 </div>
+
                 <div class="input-group">
-                    <label for="category">Κατηγορία:</label>
+                    <label for="category">Κατηγορία <span class="required">*</span></label>
                     <select id="category" name="category" required>
-                        <option value="">Επιλέξτε κατηγορία</option>
+                        <option value="" disabled selected>Επιλέξτε κατηγορία</option>
+                        <option value="car-parts">Ανταλλακτικά Αυτοκινήτων</option>
                         <option value="bookstore">Βιβλιοπωλείο</option>
                         <option value="pharmacy">Φαρμακείο</option>
-                        <option value="autoparts">Ανταλλακτικά Αυτοκινήτων</option>
-                        </select>
+                    </select>
                 </div>
-                
+
                 <div class="input-group-triple">
                     <div class="input-group address-group">
-                        <label for="address">Διεύθυνση:</label>
+                        <label for="address">Διεύθυνση <span class="required">*</span></label>
                         <input type="text" id="address" name="address" required>
                     </div>
                     <div class="input-group number-group">
-                        <label for="address-number">Αριθμός:</label>
-                        <input type="text" id="address-number" name="address-number">
+                        <label for="address-number">Αριθμός <span class="required">*</span></label>
+                        <input type="text" id="address-number" name="address-number" required>
                     </div>
                     <div class="input-group zip-group">
-                        <label for="zipCode">ΤΚ:</label>
-                        <input type="text" id="zipCode" name="zipCode" required>
+                        <label for="zip-code">Τ.Κ. <span class="required">*</span></label>
+                        <input type="text" id="zip-code" name="zip-code" required>
                     </div>
                 </div>
 
                 <div class="input-group-half">
                     <div class="input-group">
-                        <label for="email">Email:</label>
+                        <label for="email">Email <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="input-group">
-                        <label for="phone">Τηλέφωνο:</label>
+                        <label for="phone">Τηλέφωνο <span class="required">*</span></label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
 
                 <div class="input-group-half">
                     <div class="input-group">
-                        <label for="password">Κωδικός Πρόσβασης:</label>
+                        <label for="password">Κωδικός Πρόσβασης <span class="required">*</span></label>
                         <input type="password" id="password" name="password" required>
                     </div>
                     <div class="input-group">
-                        <label for="confirmPassword">Επιβεβαίωση Κωδικού:</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <label for="confirm-password">Επιβεβαίωση Κωδικού <span class="required">*</span></label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
                     </div>
                 </div>
-
+                
+                <p class="password-hint">Ο κωδικός πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες.</p>
+                
                 <button type="submit" class="register-button">Εγγραφή</button>
+
+                <p class="login-link">
+                    Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ.</a>
+                </p>
             </form>
-            <div class="login-link">
-                Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ</a>.
-            </div>
         </div>
     </main>
 
     <footer class="main-footer">
         <p>&copy; 2025 Xestock. Όλα τα δικαιώματα κατοχυρωμένα.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

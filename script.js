@@ -1,227 +1,105 @@
+document.addEventListener('DOMContentLoaded', function() {
 
-  document.addEventListener('DOMContentLoaded', () => {
-document.addEventListener('DOMContentLoaded', () => {
-const navToggle = document.querySelector('.nav-toggle');
-const mainNav = document.querySelector('.main-nav');
-
-@@ -14,47 +13,186 @@
-const suggestMessage = document.getElementById('suggest-message');
-
-// Εμφάνιση του pop-up όταν πατηθεί το κουμπί
-    suggestButton.addEventListener('click', () => {
-        modal.style.display = 'block';
-    });
-
-    // Κλείσιμο του pop-up
-    closeButton.addEventListener('click', () => {
-        modal.style.display = 'none';
-        suggestMessage.textContent = ''; // Καθαρίζει το μήνυμα
-    });
-    if (suggestButton) {
-        suggestButton.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-
-    // Κλείσιμο όταν πατηθεί έξω από το pop-up
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-        // Κλείσιμο του pop-up
-        closeButton.addEventListener('click', () => {
-modal.style.display = 'none';
-suggestMessage.textContent = ''; // Καθαρίζει το μήνυμα
-        }
-    });
-        });
-
-        // Κλείσιμο όταν πατηθεί έξω από το pop-up
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                suggestMessage.textContent = ''; // Καθαρίζει το μήνυμα
-            }
-        });
-
-    // Χειρισμός υποβολής φόρμας
-    suggestForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const data = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-        // Χειρισμός υποβολής φόρμας
-        suggestForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const form = event.target;
-            const data = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    suggestMessage.textContent = 'Ευχαριστούμε θερμά για την πρότασή σας! Η πρότασή σας έχει καταχωρηθεί και θα εξεταστεί από την ομάδα μας. Θα επικοινωνήσουμε μαζί σας σύντομα για την τελική απάντηση.';
-                    form.reset();
-                } else {
-                    suggestMessage.textContent = 'Υπήρξε κάποιο πρόβλημα. Παρακαλώ δοκιμάστε ξανά αργότερα.';
-}
-            });
-            } catch (error) {
-                suggestMessage.textContent = 'Υπήρξε κάποιο πρόβλημα. Παρακαλώ δοκιμάστε ξανά αργότερα.';
-            }
-        });
-    }
-
-    // Κώδικας για τη φόρμα σύνδεσης
-    const loginForm = document.getElementById('login-form');
+    // --- ΛΟΓΙΚΗ ΓΙΑ ΤΗ ΣΕΛΙΔΑ LOGIN ---
+    const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
+        // ... (ο κώδικας για το login παραμένει ίδιος) ...
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const emailInput = document.getElementById('email').value;
+            const passwordInput = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
 
-            const testEmail = 'test@xestock.gr';
-            const testPassword = '123456';
-
-            if (response.ok) {
-                suggestMessage.textContent = 'Ευχαριστούμε θερμά για την πρότασή σας! Η πρότασή σας έχει καταχωρηθεί και θα εξεταστεί από την ομάδα μας. Θα επικοινωνήσουμε μαζί σας σύντομα για την τελική απάντηση.';
-                form.reset();
-            if (email === testEmail && password === testPassword) {
-                localStorage.setItem('isLoggedIn', 'true');
+            if (emailInput === 'test@xestock.gr' && passwordInput === '123456') {
+                alert('Επιτυχής σύνδεση! Μεταφέρεστε στον Πίνακα Ελέγχου...');
                 window.location.href = 'dashboard.html';
-} else {
-                suggestMessage.textContent = 'Υπήρξε κάποιο πρόβλημα. Παρακαλώ δοκιμάστε ξανά αργότερα.';
-                errorMessage.textContent = 'Λάθος email ή κωδικός πρόσβασης. Παρακαλώ δοκιμάστε ξανά.';
-}
-        } catch (error) {
-            suggestMessage.textContent = 'Υπήρξε κάποιο πρόβλημα. Παρακαλώ δοκιμάστε ξανά αργότερα.';
+            } else {
+                errorMessage.textContent = 'Λάθος email ή κωδικός. Παρακαλώ δοκιμάστε ξανά.';
+            }
         });
     }
 
-    // Λειτουργία εμφάνισης/απόκρυψης φορμών στο dashboard
-    const anazitoButton = document.getElementById('anazito-button');
-    const diathetoButton = document.getElementById('diatheto-button');
-    const anazitoFormContainer = document.getElementById('anazito-form-container');
-    const diathetoFormContainer = document.getElementById('diatheto-form-container');
+    // --- ΛΟΓΙΚΗ ΓΙΑ ΤΗ ΣΕΛΙΔΑ ΕΓΓΡΑΦΗΣ (ΕΝΗΜΕΡΩΜΕΝΗ) ---
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-    if (anazitoButton && diathetoButton) {
-        anazitoButton.addEventListener('click', () => {
-            anazitoFormContainer.style.display = 'block';
-            diathetoFormContainer.style.display = 'none';
-            anazitoButton.classList.add('active');
-            diathetoButton.classList.remove('active');
-        });
+            // Παίρνουμε τις τιμές από όλα τα πεδία
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password.length < 8) {
+                alert('Ο κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες.');
+                return; 
+            }
+            if (password !== confirmPassword) {
+                alert('Οι κωδικοί πρόσβασης δεν ταιριάζουν. Παρακαλώ διορθώστε το.');
+                return;
+            }
 
-        diathetoButton.addEventListener('click', () => {
-            diathetoFormContainer.style.display = 'block';
-            anazitoFormContainer.style.display = 'none';
-            diathetoButton.classList.add('active');
-            anazitoButton.classList.remove('active');
-        });
-    }
-    
-    // Λειτουργία εμφάνισης/απόκρυψης αναρτήσεων
-    const listingTabButtons = document.querySelectorAll('.listing-tab-button');
-    const seekListingsContainer = document.getElementById('seek-listings');
-    const offerListingsContainer = document.getElementById('offer-listings');
+            // Δημιουργούμε ένα αντικείμενο με όλα τα δεδομένα της φόρμας
+            const formData = {
+                vat: document.getElementById('vat-number').value,
+                companyName: document.getElementById('company-name').value,
+                category: document.getElementById('category').value,
+                address: document.getElementById('address').value,
+                addressNumber: document.getElementById('address-number').value,
+                zipCode: document.getElementById('zip-code').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: password
+            };
 
-    if (listingTabButtons.length > 0) {
-        listingTabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                listingTabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const type = button.dataset.type;
-                if (type === 'seek') {
-                    seekListingsContainer.style.display = 'grid';
-                    offerListingsContainer.style.display = 'none';
-                } else if (type === 'offer') {
-                    seekListingsContainer.style.display = 'none';
-                    offerListingsContainer.style.display = 'grid';
-                }
+            // --- ΝΕΑ ΠΡΟΣΘΗΚΗ: Αποστολή των δεδομένων στον server ---
+            fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Απάντηση από τον server:', data);
+                alert('Η εγγραφή ήταν επιτυχής και τα δεδομένα στάλθηκαν στον server!');
+                registerForm.reset();
+            })
+            .catch(error => {
+                console.error('Σφάλμα κατά την αποστολή:', error);
+                alert('Παρουσιάστηκε ένα σφάλμα κατά την αποστολή της εγγραφής.');
             });
         });
     }
 
-    // Δημιουργία των καρτών αναρτήσεων (Dummy Data)
-    const createListingCard = (listing) => {
-        const card = document.createElement('div');
-        card.classList.add('listing-card');
-        card.innerHTML = `
-            <div class="listing-image-placeholder">
-                Δεν υπάρχει εικόνα
-            </div>
-            <div class="listing-content">
-                <h4>${listing.product}</h4>
-                <p><strong>Κατηγορία:</strong> ${listing.category}</p>
-                <p><strong>Κατάσταση:</strong> ${listing.condition}</p>
-                <p><strong>Ποσότητα:</strong> ${listing.quantity}</p>
-            </div>
-            <div class="listing-actions">
-                <button class="view-details-button">Δείτε λεπτομέρειες</button>
-            </div>
-        `;
-        return card;
-    };
-    
-    // Εμφάνιση dummy αναρτήσεων στην αρχή
-    const dummySeekListings = [
-        { product: 'Μοτέρ Ηλεκτρικό', category: 'Ηλεκτρολογικό Υλικό', condition: 'μεταχειρισμένο', quantity: 1 },
-        { product: 'Βιβλίο Οικονομικών', category: 'Βιβλιοπωλείο', condition: 'καινούργιο', quantity: 10 }
-    ];
 
-    const dummyOfferListings = [
-        { product: 'Laptop i7', category: 'Ηλεκτρονικά', condition: 'μεταχειρισμένο', quantity: 2 },
-        { product: 'Σετ κλειδιών', category: 'Είδη DIY', condition: 'καινούργιο', quantity: 1 }
-    ];
+    // --- ΛΟΓΙΚΗ ΓΙΑ ΤΗ ΣΕΛΙΔΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ---
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        // ... (ο κώδικας για την επικοινωνία παραμένει ίδιος) ...
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('contactEmail').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
 
-    if (window.location.pathname.endsWith('listings.html')) {
-        dummySeekListings.forEach(listing => {
-            seekListingsContainer.appendChild(createListingCard(listing));
-        });
-        dummyOfferListings.forEach(listing => {
-            offerListingsContainer.appendChild(createListingCard(listing));
+            if(name && email && subject && message) {
+                alert('Ευχαριστούμε για το μήνυμά σας! Θα επικοινωνήσουμε μαζί σας σύντομα.');
+                contactForm.reset();
+            } else {
+                alert('Παρακαλώ συμπληρώστε όλα τα πεδία.');
+            }
         });
     }
     
-    // Έλεγχος κατάστασης σύνδεσης σε κάθε σελίδα
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (isLoggedIn) {
-        const navLinks = document.querySelector('.main-nav ul');
-        const loginLink = navLinks.querySelector('a[href="login.html"]');
-        if (loginLink) {
-            loginLink.parentNode.remove();
-}
-    });
-        
-        const logoutItem = document.createElement('li');
-        logoutItem.innerHTML = '<a href="#" id="logout-button">Αποσύνδεση</a>';
-        navLinks.appendChild(logoutItem);
-
-        const dashboardItem = document.createElement('li');
-        dashboardItem.innerHTML = '<a href="dashboard.html">Dashboard</a>';
-        navLinks.appendChild(dashboardItem);
-        
-        const listingsItem = document.createElement('li');
-        listingsItem.innerHTML = '<a href="listings.html">Αναρτήσεις</a>';
-        navLinks.appendChild(listingsItem);
-
-        const logoutButton = document.getElementById('logout-button');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', () => {
-                localStorage.removeItem('isLoggedIn');
-                window.location.href = 'index.html';
-            });
-        }
+    // --- ΛΟΓΙΚΗ ΓΙΑ ΤΟ MOBILE MENU (HAMBURGER) ---
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    if(navToggle && mainNav){
+        // ... (ο κώδικας για το hamburger menu παραμένει ίδιος) ...
+        navToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('show');
+        });
     }
 });
