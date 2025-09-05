@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-
     <header class="main-header">
         <a href="index.html" class="logo">Xestock</a>
         <nav class="main-nav">
@@ -18,42 +17,36 @@
                 <li><a href="contact.html">Επικοινωνία</a></li>
             </ul>
         </nav>
-        <button class="nav-toggle">
-            <span class="hamburger"></span>
-        </button>
+        <button class="nav-toggle"><span class="hamburger"></span></button>
     </header>
-
     <main id="main-content">
         <div class="register-container">
             <h1>Επικοινωνήστε Μαζί Μας</h1>
             <p>Έχετε κάποια ερώτηση ή πρόταση; Συμπληρώστε την παρακάτω φόρμα.</p>
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/xandprbr" method="POST">
                 <div class="input-group">
-                    <label for="name">Ονοματεπώνυμο</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Ονοματεπώνυμο <span class="required">*</span></label>
+                    <input type="text" id="name" name="Ονοματεπώνυμο" required>
                 </div>
                 <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="contactEmail" name="email" required>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="contactEmail" name="Email" required>
                 </div>
                 <div class="input-group">
                     <label for="subject">Θέμα</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <input type="text" id="subject" name="Θέμα">
                 </div>
                 <div class="input-group">
-                    <label for="message">Το μήνυμά σας</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <label for="message">Το μήνυμά σας <span class="required">*</span></label>
+                    <textarea id="message" name="Μήνυμα" rows="6" required></textarea>
                 </div>
-                
                 <button type="submit" class="login-button">Αποστολή</button>
             </form>
         </div>
     </main>
-
     <footer class="main-footer">
         <p>&copy; 2025 Xestock. Όλα τα δικαιώματα κατοχυρωμένα.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="main-header">
         <a href="index.html" class="logo">Xestock</a>
         <nav class="main-nav">
@@ -18,36 +17,45 @@
                 <li><a href="contact.html">Επικοινωνία</a></li>
             </ul>
         </nav>
-        <button class="nav-toggle">
-            <span class="hamburger"></span>
-        </button>
+        <button class="nav-toggle"><span class="hamburger"></span></button>
     </header>
-
     <main id="main-content">
         <div class="register-container">
             <h1>Δημιουργία Λογαριασμού</h1>
             <form id="registerForm">
-
                 <div class="input-group">
                     <label for="vat-number">Α.Φ.Μ. <span class="required">*</span></label>
                     <input type="text" id="vat-number" name="vat-number" required>
                 </div>
-
                 <div class="input-group">
                     <label for="company-name">Επωνυμία Επιχείρησης <span class="required">*</span></label>
                     <input type="text" id="company-name" name="company-name" required>
                 </div>
-
                 <div class="input-group">
                     <label for="category">Κατηγορία <span class="required">*</span></label>
                     <select id="category" name="category" required>
                         <option value="" disabled selected>Επιλέξτε κατηγορία</option>
-                        <option value="car-parts">Ανταλλακτικά Αυτοκινήτων</option>
+                        <option value="car-parts">Ανταλλακτικά αυτοκινήτων</option>
+                        <option value="motorcycle-parts">Ανταλλακτικά μηχανών δικύκλων</option>
+                        <option value="bicycle-parts">Ανταλλακτικά ποδηλάτων</option>
+                        <option value="boat-parts">Ανταλλακτικά σκαφών</option>
+                        <option value="sporting-goods">Αθλητικά είδη</option>
+                        <option value="florist-nursery">Ανθοπωλεία & Φυτώρια</option>
                         <option value="bookstore">Βιβλιοπωλείο</option>
+                        <option value="diy-hobby">Είδη DIY - Hobby</option>
+                        <option value="office-supplies">Είδη γραφείου</option>
+                        <option value="pro-equipment">Είδη επαγγελματικού εξοπλισμού</option>
+                        <option value="electrical-supplies">Ηλεκτρολογικό υλικό</option>
+                        <option value="electronics-computers">Ηλεκτρονικά είδη & Υπολογιστές</option>
+                        <option value="music-instruments">Μουσικά όργανα</option>
+                        <option value="toys">Παιχνίδια</option>
+                        <option value="pet-shops">Pet shops</option>
+                        <option value="plumbing-supplies">Υδραυλικά</option>
                         <option value="pharmacy">Φαρμακείο</option>
+                        <option value="paints-hardware">Χρώματα - Σιδηρικά</option>
                     </select>
                 </div>
-
+                <a href="contact.html" class="suggest-button">Δεν βρήκες την κατηγορία σου; Πρότεινε μία</a>
                 <div class="input-group-triple">
                     <div class="input-group address-group">
                         <label for="address">Διεύθυνση <span class="required">*</span></label>
@@ -62,7 +70,6 @@
                         <input type="text" id="zip-code" name="zip-code" required>
                     </div>
                 </div>
-
                 <div class="input-group-half">
                     <div class="input-group">
                         <label for="email">Email <span class="required">*</span></label>
@@ -73,7 +80,6 @@
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
-
                 <div class="input-group-half">
                     <div class="input-group">
                         <label for="password">Κωδικός Πρόσβασης <span class="required">*</span></label>
@@ -84,22 +90,17 @@
                         <input type="password" id="confirm-password" name="confirm-password" required>
                     </div>
                 </div>
-                
                 <p class="password-hint">Ο κωδικός πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες.</p>
-                
                 <button type="submit" class="register-button">Εγγραφή</button>
-
                 <p class="login-link">
                     Έχεις ήδη λογαριασμό; <a href="login.html">Συνδέσου εδώ.</a>
                 </p>
             </form>
         </div>
     </main>
-
     <footer class="main-footer">
         <p>&copy; 2025 Xestock. Όλα τα δικαιώματα κατοχυρωμένα.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
